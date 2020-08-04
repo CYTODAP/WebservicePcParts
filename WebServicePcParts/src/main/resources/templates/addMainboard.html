@@ -1,0 +1,19 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>Add Some Fuckin Mainboard</title>
+</head>
+
+<body>
+	<h1>Form</h1>
+    <form action="#" th:action="@{/addMBoard}" th:object="${mainboard}" method="put">
+		<p>Brand: <input type="text" th:field="*{brand}" /></p>
+		<p>Model: <input type="text" th:field="*{model}" /></p>
+		<p>Type: <input type="text" th:field="*{type}" /></p>
+		<p>Ram Slot: <input type="text" th:field="*{ramSlot}" /></p>
+		<p>Price: <input type="text" th:field="*{price}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+	</form>
+	<span th:text="${response.returnMsg}"></span>
+</body>
+
+</html>

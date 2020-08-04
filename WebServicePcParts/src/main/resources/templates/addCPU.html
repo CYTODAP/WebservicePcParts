@@ -1,0 +1,22 @@
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<title>Add some freakin CPU</title>
+</head>
+
+<body>
+	<h1>Form</h1>
+    <form action="#" th:action="@{/addCpu}" th:object="${cpu}" method="put">
+		<p>Brand: <input type="text" th:field="*{brand}" /></p>
+		<p>Model: <input type="text" th:field="*{model}" /></p>
+		<p>Socket: <input type="text" th:field="*{socket}" /></p>
+		<p>Core/Thread: <input type="text" th:field="*{coreThread}" /></p>
+		<p>Frequency: <input type="text" th:field="*{freq}" /></p>
+		<p>Turbo: <input type="text" th:field="*{turbo}" /></p>
+		<p>Price: <input type="text" th:field="*{price}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+	</form>
+	<span th:text="${response.returnMsg}"></span>
+</body>
+
+</html>

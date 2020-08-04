@@ -1,0 +1,36 @@
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<title>Searching some mahfuhkin value</title>
+</head>
+
+<body>	<h1>Search some Mahfuhkin value bih!</h1>
+    <form action="#" th:action="@{/searchMBoard}" method="get">
+		<input type="text" name="search" id="search" th:value="${search}"/>
+		<p><input type="submit" value="Search"/></p>
+	</form>
+	<div th:if="${mainboards!=null}">
+	<table>
+		<thead>
+			<tr>
+				<th> Brand </th>
+				<th> Model </th>
+				<th> Type </th>
+				<th> Ram Slot </th>
+				<th> Price </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="mainboard : ${mainboards}">
+				<td style="padding: 20px;"><span th:text="${mainboard.brand}"> Brand </span></td>
+				<td style="padding: 20px;"><span th:text="${mainboard.model}"> Model </span></td>
+				<td style="padding: 20px;"><span th:text="${mainboard.type}"> Type </span></td>
+				<td style="padding: 20px;"><span th:text="${mainboard.ramSlot}"> Ram Slot </span></td>
+				<td style="padding: 20px;"><span th:text="${mainboard.price}"> Price </span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+
+</html>

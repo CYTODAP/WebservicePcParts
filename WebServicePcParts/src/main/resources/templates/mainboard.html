@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title> Ahh shit! Here we go again.</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th> Brand </th>
+				<th> Model </th>
+				<th> Type </th>
+				<th> Ram Slot </th>
+				<th> Price </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="mainboard : ${mainboards}">
+				<td style="padding: 20px;"><span th:text="${mainboard.brand}"> Brand </span></td>
+				<td style="padding: 20px;"><span th:text="${mainboard.model}"> Model </span></td>
+				<td style="padding: 20px;"><span th:text="${mainboard.type}"> Type </span></td>
+				<td style="padding: 20px;"><span th:text="${mainboard.ramSlot}"> Ram Slot </span></td>
+				<td style="padding: 20px;"><span th:text="${mainboard.price}"> Price </span></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
