@@ -20,5 +20,5 @@ public class MainboardController {
 	public Response putMainboard(@RequestBody Mainboard mb) throws Exception {
 		return mainboardService.putMainboard(mb);
 	}
-	//test
+	//test 
 }
