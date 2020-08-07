@@ -1,15 +1,18 @@
 <html xmlns:th="https://www.thymeleaf.org">
+
 <head>
-	<title>Add Mainboard info</title>
+	<title>Edit CPU</title>
 </head>
 
 <body>
-	<h1>Add Mainboard</h1>
-    <form action="#" th:action="@{/mainboard/addMBoard}" th:object="${mainboard}" method="put">
+	<h1>Edit CPU</h1>
+    <form action="#" th:action="@{/cpu/editCpu}" th:object="${cpu}" method="get">
 		<p>Brand: <input type="text" th:field="*{brand}" /></p>
 		<p>Model: <input type="text" th:field="*{model}" /></p>
-		<p>Type: <input type="text" th:field="*{type}" /></p>
-		<p>Ram Slot: <input type="text" th:field="*{ramSlot}" /></p>
+		<p>Socket: <input type="text" th:field="*{socket}" /></p>
+		<p>Core/Thread: <input type="text" th:field="*{coreThread}" /></p>
+		<p>Frequency: <input type="text" th:field="*{freq}" /></p>
+		<p>Turbo: <input type="text" th:field="*{turbo}" /></p>
 		<p>Price: <input type="text" th:field="*{price}" /></p>
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
 	</form>

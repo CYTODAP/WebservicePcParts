@@ -1,0 +1,42 @@
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<title>Search CPU info</title>
+</head>
+
+<body>	<h1>Search CPU info</h1>
+    <form action="#" th:action="@{/cpu/searchcpu}" method="get">
+		<input type="text" name="search" id="search" th:value="${search}"/>
+		<input placeholder="insert minimum price." type="text" name="searchmin" id="searchmin" th:value="${searchmin}"/>
+		<input placeholder="insert maximum price." type="text" name="searchmax" id="searchmax" th:value="${searchmax}"/>
+		<p><input type="submit" value="Search"/></p>
+	</form>
+	<div th:if="${cpus!=null}">
+	<table>
+		<thead>
+			<tr>
+				<th> Brand </th>
+				<th> Model </th>
+				<th> Socket </th>
+				<th> Core/Thread </th>
+				<th> Frequency </th>
+				<th> Turbo </th>
+				<th> Price </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="cpu : ${cpus}">
+				<td style="padding: 20px;"><span th:text="${cpu.brand}"> Brand </span></td>
+				<td style="padding: 20px;"><span th:text="${cpu.model}"> Model </span></td>
+				<td style="padding: 20px;"><span th:text="${cpu.socket}"> Socket </span></td>
+				<td style="padding: 20px;"><span th:text="${cpu.coreThread}"> Core/Thread </span></td>
+				<td style="padding: 20px;"><span th:text="${cpu.freq}"> Frequency </span></td>
+				<td style="padding: 20px;"><span th:text="${cpu.turbo}"> Turbo </span></td>
+				<td style="padding: 20px;"><span th:text="${cpu.price}"> Price </span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+
+</html>

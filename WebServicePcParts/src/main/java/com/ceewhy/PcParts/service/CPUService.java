@@ -1,5 +1,7 @@
 package com.ceewhy.PcParts.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +30,23 @@ public class CPUService {
 			res.setReturnMsg(e.getMessage());
 		}
 		return res;
+	}
+	public List<Cpu> searchCPU(String search, String searchmin, String searchmax){
+		List<Cpu> cpu = null;
+		try {
+			if(searchmax=="") {
+				searchmax="1000000";	
+			}
+			if(searchmin=="") {
+				searchmin="0";
+			}
+			cpu = cpuRepository.searchCPU(search,searchmin,searchmax);
+			if(cpu.size()==0) {
+				cpu=null;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return cpu;
 	}
 }

@@ -1,12 +1,12 @@
 <html xmlns:th="https://www.thymeleaf.org">
 
 <head>
-	<title>Add some freakin CPU</title>
+	<title>Add CPU info</title>
 </head>
 
 <body>
-	<h1>Form</h1>
-    <form action="#" th:action="@{/addCpu}" th:object="${cpu}" method="put">
+	<h1>Add CPU</h1>
+    <form action="#" th:action="@{/cpu/addCpu}" th:object="${cpu}" method="get">
 		<p>Brand: <input type="text" th:field="*{brand}" /></p>
 		<p>Model: <input type="text" th:field="*{model}" /></p>
 		<p>Socket: <input type="text" th:field="*{socket}" /></p>

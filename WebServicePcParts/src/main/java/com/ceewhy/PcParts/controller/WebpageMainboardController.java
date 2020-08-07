@@ -25,26 +25,13 @@ public class WebpageMainboardController {
 	@Autowired
 	private MainboardService mainboardService;
 
-	@RequestMapping(value = "/mainboardpage")
-	public String pageMainboard(@RequestParam Long id,ModelMap model){
-		Mainboard mb = mainboardService.getMainboardById(id);
-		model.addAttribute("mainboards", mb);
-		return "mainboard";
-	}
-	
-	@RequestMapping(value = "/mainboardbrand")
-	public String getMainboardByBrand(@RequestParam String brand,Model model) {
-		List<Mainboard> mb = mainboardService.getMainboardByBrand(brand);
-		model.addAttribute("mainboards", mb); 
-		return "mainboard";
-	}
 	@RequestMapping(value = "/addmainboard")
 	public String addMainboard(Model model){
 		model.addAttribute("mainboard", new Mainboard());
 		model.addAttribute("response", new Response());
 		return "addMainboard";
 	}
-	@PutMapping(value = "/addMBoard")
+	@GetMapping(value = "/addMBoard")
 	public String addMBoard(@ModelAttribute Mainboard mb,Model model) throws Exception {
 		model.addAttribute("response", mainboardService.putMainboard(mb));
 		return "addMainboard";
